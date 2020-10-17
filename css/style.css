@@ -1,0 +1,410 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --color:#18CFAB;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+    width: 1160px;
+    margin: 0 auto;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.row {
+    display: flex;
+}
+
+.align-items--center {
+    align-items: center;
+}
+
+.justify-content--center {
+    justify-content: center;
+}
+
+.wrapper {
+    background-color: #808080;
+    background-image: url(../img/Sections-background/section-1-header.jpg);
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    background-attachment: fixed;
+}
+
+/* Header */
+
+.header {
+    background-color: rgba(94, 93, 88, 60%);
+    justify-content: center;
+}
+
+.logo-block {
+    display: flex;
+    align-items: center;
+    margin-right: 300px;
+    text-decoration: none;  
+}
+
+.logo-ic {
+    width: 58px;
+    padding-top: 26px;
+    padding-bottom: 26px;
+    position: relative;
+}
+.first-letter {
+    color: #ffffff;
+    font-size: 40px;
+    position: absolute;
+    font-weight: 700;
+    padding: 13px;;
+}
+
+.logo-name {
+    font-size: 32px;
+    font-weight: 400;
+    color: #ffffff;
+}
+
+.highlighted  {
+    color: var(--color);
+    font-weight: 700;
+}
+
+.nav-link {
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 60%);
+    padding: 5px;
+    margin: 5px;
+    padding-bottom: 48px;
+}
+
+.nav-link:hover {
+    color:  var(--color);
+    border-bottom: 2px solid  var(--color);
+}
+
+.search {
+    width: 21px;
+}
+
+.search-btn {
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    transition: 0.2s;
+    margin-left: 10px;
+}
+
+.search-btn:active {
+    border: 0;
+}
+
+/* Section description */
+
+.section-desc {
+    color: #ffffff;
+    text-align: center;
+}
+
+.section-desc h3,
+.section-desc h1 {
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0;
+
+}
+
+.section-desc h3 {
+    font-size: 35px; 
+    margin-top: 200px; 
+}
+
+.section-desc h1 {
+    font-size: 78px;
+    margin-top: 22px;
+    margin-bottom: 22px;
+}
+
+
+.section-desc h2 {
+    font-size: 34px;
+    font-weight: 400;
+    color: #d4d4d4;
+    margin: 0;
+}
+
+.btns-box {
+    margin-top: 135px;
+}
+
+.btn {
+    font-size: 15px;
+    font-weight: 700;
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    border-radius: 4px;
+}
+.btn-green {
+    background-color:var(--color);
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+.btn-blue {
+    background-color:#00CBF6;
+    padding-left: 17px;
+    padding-right: 17px;
+    margin-left: 25px;
+}
+
+/* Section Squares */
+ 
+.square {
+height: 377px;
+flex-grow: 1;
+text-transform: uppercase;
+font-size: 20px;
+font-weight: 700;
+flex-direction: column;
+justify-content: center;
+}
+
+.dark {
+    background-color: #1C2A33;
+    color: var(--color);
+}
+
+.light {
+    background-color:var(--color);
+    color: #ffffff;
+}
+
+.square-ic {
+    width: 100px;
+    margin-bottom: 58px;
+}
+
+.square-ic-dark {
+    width: 60px;
+    margin-bottom: 48px;
+}
+
+/* Section Tabs - Our Service */
+
+.heading {
+    color: #4E4E4E;
+    font-size: 36px;
+    margin: 0;
+    font-weight: 400;
+    text-align: center;
+    padding-top: 85px;
+    padding-bottom: 100px;
+    position: relative;
+}
+
+.heading::before,
+.heading::after {
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 78px;
+    background-color: var(--color);
+}
+
+.heading::before {
+    top: 164px;
+    left: 540px;
+}
+
+.heading::after {
+    top: 168px;
+    right: 515px;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.centered-content {
+    /* height: 240px; */
+    flex-direction: column;
+}
+
+.tabs-title {
+    padding: 28px 39px;
+    font-size: 16px;
+    background-color: #F8FCFE;
+    color: #717171;
+    cursor: pointer;
+    border: 1px solid #EDEFEF;
+}
+
+.tabs-title:hover {
+    border: 1px solid var(--color);
+}
+
+.tabs-title.active {
+    background-color: var(--color);
+    color: #ffffff;
+}
+.tabs-content {
+    font-size: 13.5px;
+    font-weight: 300;
+    line-height: 1.7;
+    padding-top: 23px;
+    padding-bottom: 90px;
+    color: #777777;
+}
+.tabs-content li {
+    display: none;
+}
+
+li.active-desc {
+    display: block;
+}
+
+.tabs-img {
+    float: left;
+    margin-right: 15px;
+}
+
+/* Section Ready */
+
+.wrap {
+    background-color: #808080;
+    background-image: url(../img/Sections-background/section-2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.blackout {
+    background-color: rgba(0,0,0,0.8);
+}
+
+.heading-ready,
+.text {
+    text-align: center;
+    margin: 0;
+}
+
+.heading-ready {
+    font-size: 40px;
+    color: var(--color);
+    text-transform: uppercase;
+    padding-top: 127px;
+}
+
+.text {
+    color: #D8D8D8;
+    padding-top: 25px;
+    padding-bottom: 80px;
+}
+
+.btn-pad {
+    padding-bottom: 128px;
+}
+
+/* Section Work */
+
+.section-work {
+background-color: #E9EDEF;
+padding-bottom: 100px;
+}
+
+.tabs-title-work {
+    padding: 20px 30px;
+    font-size: 14px;
+    color: #717171;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.0001);
+    border: 1px solid #DADADA;
+}
+
+.tabs-title-work:hover {
+    border: 2px solid var(--color);
+}
+
+.plus-ic {
+    padding-right: 15px;
+}
+
+.box-cell {
+    padding-top: 70px;
+    padding-bottom: 70px;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 0;
+}
+
+.cell {
+    position: relative;
+}
+
+.cell img{
+    position: relative;
+    z-index: 5;
+}
+
+.cell img:hover {
+    z-index: -1;
+} 
+
+.hover-info {
+    width: 284px;
+    height: 206px;
+    background: #E9EDEF;
+    border-top: 3px solid var(--color);
+    flex-direction: column;
+    padding-top: 45px;
+    padding-bottom: 40px;
+    position: absolute;
+    top: 0;
+    z-index: 3;
+}
+
+.hover-info p{
+    margin: 0;
+}
+
+.hover-info-general {
+    font-size: 14px;
+    line-height: 2;
+    color: var(--color);
+    text-transform: uppercase;
+    font-weight: 700;
+    padding-top: 25px;
+}
+
+.hover-info-group {
+    font-size: 12px;
+    color: #8A8A8A;
+    font-weight: 300;
+}
+
+
+
+/* Section news */
+
+.section-news {
+
+}
+
