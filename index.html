@@ -87,11 +87,11 @@
         <div class="row align-items--center justify-content--center centered-content">
             <ul class="row">
                 <li class="tabs-title active" data-tabs="">Web Design</li>
-                <li class="tabs-title active" data-tabs="">Graphic Design</li>
-                <li class="tabs-title active" data-tabs="">Online Support</li>
-                <li class="tabs-title active" data-tabs="">App Design</li>
-                <li class="tabs-title active" data-tabs="">Online Marketing</li>
-                <li class="tabs-title active" data-tabs="">Seo Service</li>
+                <li class="tabs-title" data-tabs="">Graphic Design</li>
+                <li class="tabs-title" data-tabs="">Online Support</li>
+                <li class="tabs-title" data-tabs="">App Design</li>
+                <li class="tabs-title" data-tabs="">Online Marketing</li>
+                <li class="tabs-title" data-tabs="">Seo Service</li>
             </ul>
 
             <ul class="tabs-content">
@@ -526,25 +526,38 @@
     <script type="module">
         import Swiper from 'https://unpkg.com/swiper/swiper-bundle.esm.browser.min.js'
 
-        var MySwiper = new Swiper('.swiper-container.preview', {
-            spaceBetween: 50,
-            observer: true,
-            observeParents: true,
-            keyboard: {
-                enabled: true
-            },
+
+        var swiper = new Swiper('.swiper-container', {
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true,
-                type: 'custom',
-                bulletClass: 'swiper-pagination-img',
                 renderBullet: function (index, className) {
-                    return '<img class="' + className + '">' + (index + 1) + '>';
-
+                    return '<img class="' + className + '">' + (index + 1);
                 },
             },
-
         });
-</body >
 
-</html >
+
+        // var MySwiper = new Swiper('.swiper-container.preview', {
+        //     spaceBetween: 50,
+        //     observer: true,
+        //     observeParents: true,
+        //     keyboard: {
+        //         enabled: true
+        //     },
+        //     pagination: {
+        //         el: '.swiper-pagination',
+        //         clickable: true,
+        //         type: 'custom',
+        //         bulletClass: 'swiper-pagination-img',
+        //         renderBullet: function (index, className) {
+        //             return '<img class="' + className + '">' + (index + 1) + '>';
+
+        //         },
+        //     },
+
+        // });
+    </script>
+</body>
+
+</html>
