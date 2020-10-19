@@ -537,18 +537,28 @@
                 clickable: true,
 
                 renderBullet: function (index, className) {
-
-                    console.log(this);
-                    return '<img class="' + className + '">'
-                    //  + 'src="' + ;
+                    let imgPath = this.slides[index].querySelector('.img-client').getAttribute('src');
+                    console.log(imgPath);
+                    return '<img class="' + className + '" ' + 'src="' + imgPath + '">';
                 },
             },
-            // navigation: {
-            //     nextEl: '.button-pagination..button-pagination-right',
-            //     prevEl: '.button-pagination.button-pagination-left'
-            // }
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
         });
-        console.log(swiper.slides);
+
+
+        // var swiper = new Swiper('.swiper-container', {
+        //     cssMode: true,
+
+        //     pagination: {
+        //         el: '.swiper-pagination'
+        //     },
+        //     mousewheel: true,
+        //     keyboard: true,
+        // });
+
 
 
     </script>
