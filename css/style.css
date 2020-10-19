@@ -533,6 +533,30 @@ figure {
     width: 143px;
 }
 
+.button-pagination {
+width: 30px;
+height: 30px;
+border: 1px solid #888888;
+position: absolute;
+z-index: 10;
+display: inline-block;
+bottom: 30px;
+padding: 6px 10px;
+cursor: pointer;
+background-color: transparent;
+}
+
+.button-pagination:hover {
+    background-color: var(--color);
+    }
+
+.button-pagination-left {
+left: 25%;
+}
+
+.button-pagination-right {
+right: 25%;
+}
 
 
 /* Footer */

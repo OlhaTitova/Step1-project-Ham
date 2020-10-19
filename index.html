@@ -439,7 +439,7 @@
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <img src="./img/People/ic-quotes.png" alt="quotes">
-                            <p class="text feedback">Integer dignissim, augue tempus ultricies luctus, quam dui
+                            <p class="text feedback">0000 Integer dignissim, augue tempus ultricies luctus, quam dui
                                 laoreet
                                 sem, non
                                 dictum odio nisi quis massa. Morbi pulvinar odio eget aliquam facilisis. Tempus
@@ -454,7 +454,7 @@
                         </div>
                         <div class="swiper-slide">
                             <img src="./img/People/ic-quotes.png" alt="quotes">
-                            <p class="text feedback">Integer dignissim, augue tempus ultricies luctus, quam dui
+                            <p class="text feedback">1111 Integer dignissim, augue tempus ultricies luctus, quam dui
                                 laoreet
                                 sem, non
                                 dictum odio nisi quis massa. Morbi pulvinar odio eget aliquam facilisis. Tempus
@@ -469,7 +469,7 @@
                         </div>
                         <div class="swiper-slide">
                             <img src="./img/People/ic-quotes.png" alt="quotes">
-                            <p class="text feedback">Integer dignissim, augue tempus ultricies luctus, quam dui
+                            <p class="text feedback">222 Integer dignissim, augue tempus ultricies luctus, quam dui
                                 laoreet
                                 sem, non
                                 dictum odio nisi quis massa. Morbi pulvinar odio eget aliquam facilisis. Tempus
@@ -484,7 +484,7 @@
                         </div>
                         <div class="swiper-slide">
                             <img src="./img/People/ic-quotes.png" alt="quotes">
-                            <p class="text feedback">Integer dignissim, augue tempus ultricies luctus, quam dui
+                            <p class="text feedback">3333 Integer dignissim, augue tempus ultricies luctus, quam dui
                                 laoreet
                                 sem, non
                                 dictum odio nisi quis massa. Morbi pulvinar odio eget aliquam facilisis. Tempus
@@ -498,8 +498,17 @@
                             </div>
                         </div>
 
+                        <div class="button-pagination button-pagination-left">
+                            <img src="./img/People/ic-arrow-left.png" alt="">
+                        </div>
+                        <div class="button-pagination button-pagination-right">
+                            <img src="./img/People/ic-arrow-right.png" alt="">
+                        </div>
                     </div>
+
+
                     <!-- Add Pagination -->
+
                     <div class="swiper-pagination">
                     </div>
 
@@ -526,13 +535,20 @@
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true,
-                bulletClass: 'swiper-pagination-img',
-                renderBullet: function (index, className) {
+                // path: 'img-client',
+
+                renderBullet: function (index, className, path) {
+                    console.log(this);
                     return '<img class="' + className + '">'
                     //  + 'src="' + ;
                 },
             },
+            // navigation: {
+            //     nextEl: '.button-pagination..button-pagination-right',
+            //     prevEl: '.button-pagination.button-pagination-left'
+            // }
         });
+        console.log(swiper.slides);
 
 
     </script>
