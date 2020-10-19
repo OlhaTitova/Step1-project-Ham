@@ -260,7 +260,28 @@
   border: 5px solid rgba(31, 218, 181, 20%);
     /* border-radius: 50%; */
 }
-button.swiper-pagination-bullet {
+
+.swiper-pagination-img {
+  width: 70px;
+  height: 70px;
+  display: inline-block;
+  border-radius: 100%;
+  border: 5px solid rgba(31, 218, 181, 20%);
+}
+
+.swiper-pagination-clickable .swiper-pagination-img {
+  cursor: pointer;
+}
+
+.swiper-pagination-img-active {
+  transform: translateY(-15%);
+}
+
+.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-img {
+  margin: 0 15px;
+}
+
+.button.swiper-pagination-bullet {
   border: none;
   margin: 0;
   padding: 0;

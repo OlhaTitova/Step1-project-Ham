@@ -433,7 +433,7 @@
             <div class="container">
                 <h1 class="heading heading-light">What People Say About theHam</h1>
 
-
+                <!-- Swiper -->
                 <div class="swiper-container preview">
 
                     <div class="swiper-wrapper">
@@ -501,16 +501,10 @@
                     </div>
                     <!-- Add Pagination -->
                     <div class="swiper-pagination">
-                        <!-- <img class="swiper-pagination-img" src="./img/People/people1.png" alt="photo">
-                        <img class="swiper-pagination-img" src="./img/People/people2.png" alt="photo">
-                        <img class="swiper-pagination-img" src="./img/People/people3.png" alt="photo">
-                        <img class="swiper-pagination-img" src="./img/People/people4.png" alt="photo"> -->
                     </div>
 
                 </div>
             </div>
-
-
     </section>
 
     <!-- Footer -->
@@ -532,8 +526,10 @@
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true,
+                bulletClass: 'swiper-pagination-img',
                 renderBullet: function (index, className) {
-                    return '<img class="' + className + '">';
+                    return '<img class="' + className + '">'
+                    //  + 'src="' + ;
                 },
             },
         });
