@@ -181,44 +181,120 @@ let imgsPath2 = [
 ];
 
 imgsPath1.forEach((elem) => {
-    let valueSrc = elem['src'];
-    let valueData = elem['data'];
-    let valueHoverInfo = elem['p'];
-    newImgLoaded1.push('<div class="cell" data="' + valueData + '"><img src="' + valueSrc + '" alt="img-work"><div class="hover-info row align-items--center"><img src="./img/work/icon.png" alt="icon"><p class="hover-info-general highlighted">Creative design</p><p class="hover-info-group">' + valueHoverInfo + '</p></div></div>');
+    newImgLoaded1.push(`<div class="cell" data="${elem.data}"><img src="${elem.src}" alt="img-work"><div class="hover-info row align-items--center"><img src="./img/work/icon.png" alt="icon"><p class="hover-info-general highlighted">Creative design</p><p class="hover-info-group">${elem.p}</p></div></div>`);
 });
 
 
 imgsPath2.forEach((elem) => {
-    let valueSrc = elem['src'];
-    let valueData = elem['data'];
-    let valueHoverInfo = elem['p'];
-    newImgLoaded2.push('<div class="cell" data="' + valueData + '"><img src="' + valueSrc + '" alt="img-work"><div class="hover-info row align-items--center"><img src="./img/work/icon.png" alt="icon"><p class="hover-info-general highlighted">Creative design</p><p class="hover-info-group">' + valueHoverInfo + '</p></div></div>');
+    newImgLoaded2.push(`<div class="cell" data="${elem.data}"><img src="${elem.src}" alt="img-work"><div class="hover-info row align-items--center"><img src="./img/work/icon.png" alt="icon"><p class="hover-info-general highlighted">Creative design</p><p class="hover-info-group">${elem.p}</p></div></div>`);
 });
 
+function showLoader(id) {
+    document.querySelector(id).style.display = 'inline-block';
+};
 
-$('#work-loaded').one('click', firstClick);
+function hideLoader(id) {
+    document.querySelector(id).style.display = 'none';
+};
+
+$('#btn-work-loaded').one('click', firstClick);
 
 function firstClick(evt) {
     evt.preventDefault();
-    $('.box-cell').append(newImgLoaded1.join(""));
-    $(this).click(function (evt) {
-        evt.preventDefault();
-        $('.box-cell').append(newImgLoaded2.join(""));
-        $(this).detach();
-    });
+
+    showLoader('#loaded-work');
+
+
+    setTimeout(() => {
+        hideLoader('#loaded-work');
+
+        $('.box-cell').append(newImgLoaded1.join(""));
+
+        $(this).click(function (evt) {
+
+            evt.preventDefault();
+            showLoader('#loaded-work');
+
+            setTimeout(() => {
+                hideLoader('#loaded-work');
+
+                $('.box-cell').append(newImgLoaded2.join(""));
+                $(this).detach();
+            }, 2000);
+        });
+    }, 2000);
 };
-
-
-
-
-
 
 // Masonry
 
-$('.grid').masonry({
-    itemSelector: '.grid-item',
-    percentPosition: true,
-    columnWidth: '.grid-sizer',
-    gutter: '.gutter-sizer',
+let $grid = $('.grid').imagesLoaded(function () {
+
+    $grid.masonry({
+        itemSelector: '.grid-item',
+        percentPosition: true,
+        columnWidth: '.grid-sizer',
+        gutter: '.gutter-sizer',
+    });
 });
+
+// Masonry loaded
+
+let valuePhotosGallery = [
+    {
+        src: "./img/gallery/3.jpg",
+        height: "426px",
+    },
+    {
+        src: "./img/gallery/ia-Pools-1 1.svg",
+        height: "262px",
+    },
+    {
+        src: "./img/gallery/2-city.jpg",
+        height: "344px",
+    },
+];
+
+$('#btn-gallery-loaded').on('click', function (e) {
+    e.preventDefault();
+
+    showLoader('#loaded-gallery');
+
+    let items = [];
+
+    setTimeout(() => {
+        hideLoader('#loaded-gallery');
+        valuePhotosGallery.forEach((elem) => {
+
+            let el = document.createElement('img')
+            el.src = elem.src
+            el.className = 'grid-item'
+            el.style.height = elem.height;
+            items.push(el);
+        });
+
+        $('.grid').append(items).
+            masonry('appended', items);
+    }, 2000);
+});
+
+
+
+
+document.querySelector('#btn-gallery-loaded').addEventListener('click', () => {
+
+    let timer = setInterval(() => {
+        document.querySelector('#loaded-gallery').style.display = 'inline-block';
+    }, 2000);
+
+    clearInterval(timer);
+});
+
+    // setTimeout(() => {
+    //     $grid.masonry();
+    // }, 500)
+
+
+
+
+
 
