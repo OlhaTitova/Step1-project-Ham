@@ -1,10 +1,11 @@
 # Step1-project-Ham
 
-# **DEMO:**
+**DEMO:** https://olhatitova.github.io/Step1-project-Ham/
 
 ## Задание:
 
-Сверстать макет - https://www.figma.com/file/Do0TLndoEjGwuF9Ri7UHol/The-Ham-Step-Project?node-id=2143%3A2. Подключить динамические элементы (см. ниже)
+Сверстать макет - https://www.figma.com/file/Do0TLndoEjGwuF9Ri7UHol/The-Ham-Step-Project?node-id=2143%3A2. 
+Подключить динамические элементы (см. ниже)
 
 *Технические требования к верстке:*
 
