@@ -14,14 +14,12 @@ tabs.addEventListener('click', function (e) {
 
     tabsContent.querySelector('.active-desc').classList.remove('active-desc');
     tabsContent.querySelector(`[data-cont=${attrCurTab}]`).classList.add('active-desc');
-
 })
 
 // Work Filter
 
 let tabsWork = document.body.querySelector('.tabs-work');
 let boxCellImg = document.body.querySelector('.box-cell');
-
 
 tabsWork.addEventListener('click', function (e) {
 
@@ -35,7 +33,6 @@ tabsWork.addEventListener('click', function (e) {
     let attrCurTab = e.target.getAttribute('data');
     let curCells = boxCellImg.querySelectorAll(`[data=${attrCurTab}]`);
 
-
     curCells.forEach((item) => {
         item.hidden = false;
     })
@@ -45,13 +42,9 @@ tabsWork.addEventListener('click', function (e) {
             item.hidden = false;
         }
     };
-
 })
 
 // Work Loaded
-
-let newImgLoaded1 = [];
-let newImgLoaded2 = [];
 
 let imgsPath1 = [
     {
@@ -116,7 +109,6 @@ let imgsPath1 = [
     },
 ];
 
-
 let imgsPath2 = [
     {
         src: "./img/graphic design/graphic-design7.jpg",
@@ -180,13 +172,15 @@ let imgsPath2 = [
     },
 ];
 
+let newImgWork1 = [];
+let newImgWork2 = [];
+
 imgsPath1.forEach((elem) => {
-    newImgLoaded1.push(`<div class="cell" data="${elem.data}"><img src="${elem.src}" alt="img-work"><div class="hover-info row align-items--center"><img src="./img/work/icon.png" alt="icon"><p class="hover-info-general highlighted">Creative design</p><p class="hover-info-group">${elem.p}</p></div></div>`);
+    newImgWork1.push(`<div class="cell" data="${elem.data}"><img src="${elem.src}" alt="img-work"><div class="hover-info row align-items--center"><img src="./img/work/icon.png" alt="icon"><p class="hover-info-general highlighted">Creative design</p><p class="hover-info-group">${elem.p}</p></div></div>`);
 });
 
-
 imgsPath2.forEach((elem) => {
-    newImgLoaded2.push(`<div class="cell" data="${elem.data}"><img src="${elem.src}" alt="img-work"><div class="hover-info row align-items--center"><img src="./img/work/icon.png" alt="icon"><p class="hover-info-general highlighted">Creative design</p><p class="hover-info-group">${elem.p}</p></div></div>`);
+    newImgWork2.push(`<div class="cell" data="${elem.data}"><img src="${elem.src}" alt="img-work"><div class="hover-info row align-items--center"><img src="./img/work/icon.png" alt="icon"><p class="hover-info-general highlighted">Creative design</p><p class="hover-info-group">${elem.p}</p></div></div>`);
 });
 
 function showLoader(id) {
@@ -200,15 +194,14 @@ function hideLoader(id) {
 $('#btn-work-loaded').one('click', firstClick);
 
 function firstClick(evt) {
+
     evt.preventDefault();
-
     showLoader('#loaded-work');
-
 
     setTimeout(() => {
         hideLoader('#loaded-work');
 
-        $('.box-cell').append(newImgLoaded1.join(""));
+        $('.box-cell').append(newImgWork1.join(""));
 
         $(this).click(function (evt) {
 
@@ -218,7 +211,7 @@ function firstClick(evt) {
             setTimeout(() => {
                 hideLoader('#loaded-work');
 
-                $('.box-cell').append(newImgLoaded2.join(""));
+                $('.box-cell').append(newImgWork2.join(""));
                 $(this).detach();
             }, 2000);
         });
@@ -227,74 +220,52 @@ function firstClick(evt) {
 
 // Masonry
 
-let $grid = $('.grid').imagesLoaded(function () {
+let $grid = $('.grid').masonry({
+    itemSelector: '.grid-item',
+    percentPosition: true,
+    columnWidth: '.grid-sizer',
+    gutter: '.gutter-sizer',
+});
 
-    $grid.masonry({
-        itemSelector: '.grid-item',
-        percentPosition: true,
-        columnWidth: '.grid-sizer',
-        gutter: '.gutter-sizer',
-    });
+$grid.imagesLoaded().progress(function () {
+    $grid.masonry('layout');
 });
 
 // Masonry loaded
 
-let valuePhotosGallery = [
+let newMasonryImg = [
     {
         src: "./img/gallery/3.jpg",
-        height: "426px",
     },
     {
         src: "./img/gallery/ia-Pools-1 1.svg",
-        height: "262px",
     },
     {
         src: "./img/gallery/2-city.jpg",
-        height: "344px",
     },
 ];
 
-$('#btn-gallery-loaded').on('click', function (e) {
+$('#btn-gallery-loaded').on('click', (e) => {
+
     e.preventDefault();
-
     showLoader('#loaded-gallery');
-
-    let items = [];
 
     setTimeout(() => {
         hideLoader('#loaded-gallery');
-        valuePhotosGallery.forEach((elem) => {
-
-            let el = document.createElement('img')
-            el.src = elem.src
-            el.className = 'grid-item'
-            el.style.height = elem.height;
-            items.push(el);
-        });
-
-        $('.grid').append(items).
-            masonry('appended', items);
+        addImgMasonry();
     }, 2000);
 });
 
+function addImgMasonry() {
 
-
-
-document.querySelector('#btn-gallery-loaded').addEventListener('click', () => {
-
-    let timer = setInterval(() => {
-        document.querySelector('#loaded-gallery').style.display = 'inline-block';
-    }, 2000);
-
-    clearInterval(timer);
-});
-
-    // setTimeout(() => {
-    //     $grid.masonry();
-    // }, 500)
-
-
-
-
-
-
+    newMasonryImg.forEach((item) => {
+        let el = document.createElement('img');
+        el.className = 'grid-item';
+        el.src = item.src;
+        $('.grid').append(el).
+            masonry('appended', el);
+    });
+    $grid.imagesLoaded().progress(function () {
+        $grid.masonry('layout');
+    });
+}

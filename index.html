@@ -5,20 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Step1 project Ham</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/normalize.css">
-    <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/swiper-bundle.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
 
     <!-- Header -->
 
-    <div class="wrapper">
+    <section class="wrapper">
         <header class="header row align-items--center">
+
             <a href="#" class="logo-block">
-                <img class="logo-ic w-100" src="./img/Polygon.png" alt="Ham">
+                <img class="logo-ic" src="./img/Polygon.png" alt="Ham">
                 <span class="first-letter">H</span>
                 <span class="logo-name">the<span class="highlighted">Ham</span></span>
             </a>
@@ -35,7 +35,7 @@
 
             <div>
                 <button class="search-btn">
-                    <img src="./img/search.png" class="w-100 search" alt="search">
+                    <img src="./img/search.png" class="search" alt="search">
                 </button>
             </div>
         </header>
@@ -56,7 +56,7 @@
 
             </div>
         </section>
-    </div>
+    </section>
 
     <!-- Section square -->
 
@@ -193,7 +193,6 @@
             <h1 class="heading">Our Amazing Work</h1>
 
             <div class="centered-content">
-
                 <ul class="tabs-work row justify-content--center">
                     <li class="tabs-title-work active">All</li>
                     <li class="tabs-title-work" data="graphic-design">Graphic Design</li>
@@ -505,20 +504,17 @@
                         </div>
                     </div>
 
-
                     <!-- Add Pagination -->
 
                     <div class="swiper-pagination">
                     </div>
 
                     <div class="button-pagination button-pagination-left">
-
                         <svg width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd"
                                 d="M6.50764 12.5076L7.81261 11.1056L3.52463 6.49631L7.81261 1.88987L6.50764 0.486695L0.91457 6.49631L6.50764 12.5076Z"
                                 fill="#BBBBBB" />
                         </svg>
-
                     </div>
                     <div class="button-pagination button-pagination-right">
 
@@ -529,8 +525,6 @@
                         </svg>
 
                     </div>
-
-
                 </div>
             </div>
     </section>
@@ -540,6 +534,7 @@
     <section class="section-gallery">
         <div class="container">
             <h1 class="heading">Gallery of best images</h1>
+
             <div class="grid">
                 <div class="grid-sizer"></div>
                 <div class="gutter-sizer"></div>
@@ -551,7 +546,6 @@
                 <img class="grid-item" src="./img/gallery/16-bridge.jpg" alt="gallery-photo">
                 <img class="grid-item " src="./img/gallery/17-ringve-museum.jpg" alt="gallery-photo">
                 <img class="grid-item " src="./img/gallery/18-vanglo-house.jpg" alt="gallery-photo">
-
             </div>
         </div>
 
@@ -578,27 +572,21 @@
         </p>
     </footer>
 
-
-
-    <!--  -->
     <script src="./js/jquery-3.5.1.min.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
     <script src="./js/masonry.pkgd.min.js"></script>
     <script src="./js/main.js"></script>
 
+    <!-- Swiper -->
 
     <script type='module'>
-        // Swiper
-
-
-        import Swiper from 'https://unpkg.com/swiper/swiper-bundle.esm.browser.min.js'
+        import Swiper from 'https://unpkg.com/swiper/swiper-bundle.esm.browser.min.js';
 
         var swiper = new Swiper('.swiper-container', {
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true,
-
                 renderBullet: function (index, className) {
                     let imgPath = this.slides[index].querySelector('.img-client').getAttribute('src');
                     return '<img class="' + className + '" ' + 'src="' + imgPath + '">';
