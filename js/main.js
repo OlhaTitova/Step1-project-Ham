@@ -2,15 +2,15 @@
 
 // Tabs
 
-let tabs = document.body.querySelector('.tabs');
-let tabsContent = document.body.querySelector('.tabs-content');
+const tabs = document.body.querySelector('.tabs');
+const tabsContent = document.body.querySelector('.tabs-content');
 
 tabs.addEventListener('click', function (e) {
 
     tabs.querySelector('.active').classList.remove('active');
     e.target.classList.add('active');
 
-    let attrCurTab = e.target.getAttribute('data-tab');
+    const attrCurTab = e.target.getAttribute('data-tab');
 
     tabsContent.querySelector('.active-desc').classList.remove('active-desc');
     tabsContent.querySelector(`[data-cont=${attrCurTab}]`).classList.add('active-desc');
@@ -18,8 +18,8 @@ tabs.addEventListener('click', function (e) {
 
 // Work Filter
 
-let tabsWork = document.body.querySelector('.tabs-work');
-let boxCellImg = document.body.querySelector('.box-cell');
+const tabsWork = document.body.querySelector('.tabs-work');
+const boxCellImg = document.body.querySelector('.box-cell');
 
 tabsWork.addEventListener('click', function (e) {
 
@@ -30,7 +30,7 @@ tabsWork.addEventListener('click', function (e) {
         item.hidden = true;
     }
 
-    let attrCurTab = e.target.getAttribute('data');
+    const attrCurTab = e.target.getAttribute('data');
     let curCells = boxCellImg.querySelectorAll(`[data=${attrCurTab}]`);
 
     curCells.forEach((item) => {
@@ -46,7 +46,7 @@ tabsWork.addEventListener('click', function (e) {
 
 // Work Loaded
 
-let imgsPath1 = [
+const imgsPath1 = [
     {
         src: "./img/graphic design/graphic-design4.jpg",
         data: "graphic-design",
@@ -109,7 +109,7 @@ let imgsPath1 = [
     },
 ];
 
-let imgsPath2 = [
+const imgsPath2 = [
     {
         src: "./img/graphic design/graphic-design7.jpg",
         data: "graphic-design",
@@ -176,11 +176,21 @@ let newImgWork1 = [];
 let newImgWork2 = [];
 
 imgsPath1.forEach((elem) => {
-    newImgWork1.push(`<div class="cell" data="${elem.data}"><img src="${elem.src}" alt="img-work"><div class="hover-info row align-items--center"><img src="./img/work/icon.png" alt="icon"><p class="hover-info-general highlighted">Creative design</p><p class="hover-info-group">${elem.p}</p></div></div>`);
+    newImgWork1.push(`<div class="cell" data="${elem.data}">
+    <img src="${elem.src}" alt="img-work">
+    <div class="hover-info row align-items--center">
+    <img src="./img/work/icon.png" alt="icon">
+    <p class="hover-info-general highlighted">Creative design</p>
+    <p class="hover-info-group">${elem.p}</p></div></div>`);
 });
 
 imgsPath2.forEach((elem) => {
-    newImgWork2.push(`<div class="cell" data="${elem.data}"><img src="${elem.src}" alt="img-work"><div class="hover-info row align-items--center"><img src="./img/work/icon.png" alt="icon"><p class="hover-info-general highlighted">Creative design</p><p class="hover-info-group">${elem.p}</p></div></div>`);
+    newImgWork2.push(`<div class="cell" data="${elem.data}">
+    <img src="${elem.src}" alt="img-work">
+    <div class="hover-info row align-items--center">
+    <img src="./img/work/icon.png" alt="icon">
+    <p class="hover-info-general highlighted">Creative design</p>
+    <p class="hover-info-group">${elem.p}</p></div></div>`);
 });
 
 function showLoader(id) {
@@ -233,7 +243,7 @@ $grid.imagesLoaded().progress(function () {
 
 // Masonry loaded
 
-let newMasonryImg = [
+const newMasonryImg = [
     {
         src: "./img/gallery/3.jpg",
     },
