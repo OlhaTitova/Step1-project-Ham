@@ -245,13 +245,13 @@ $grid.imagesLoaded().progress(function () {
 
 const newMasonryImg = [
     {
+        src: "./img/gallery/2-city.jpg",
+    },
+    {
         src: "./img/gallery/3.jpg",
     },
     {
         src: "./img/gallery/ia-Pools-1 1.svg",
-    },
-    {
-        src: "./img/gallery/2-city.jpg",
     },
 ];
 
